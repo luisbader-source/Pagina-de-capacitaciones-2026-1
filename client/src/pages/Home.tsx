@@ -32,7 +32,7 @@ export default function Home() {
       <Header />
 
       {/* Hero Section */}
-      <section id="inicio" className="relative overflow-hidden bg-gradient-to-br from-blue-50 to-green-50 py-16 md:py-24">
+      <section id="inicio" className="relative overflow-hidden bg-gradient-to-br from-blue-50 to-green-50 py-12 md:py-24">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
@@ -45,25 +45,25 @@ export default function Home() {
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight">
                 Domina el {" "}
                 <span className="text-primary">CAMPUS VIRTUAL</span> y
                 Transforma tu enseñanza con el apoyo de las TIC.
               </h1>
-              <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+              <p className="text-base md:text-lg text-gray-700 mb-6 md:mb-8 leading-relaxed">
                 Una ruta de aprendizaje integral diseñada para docentes de la
                 Universidad de Córdoba. Aprende desde los fundamentos hasta
                 especializaciones disciplinares adaptadas a tu facultad.
               </p>
               <motion.button
                 onClick={() => setCurrentModule(1)}
-                className="px-8 py-3 bg-primary text-white rounded-lg font-semibold flex items-center gap-2 hover:bg-primary/90 transition-colors"
+                className="w-full sm:w-auto px-6 md:px-8 py-3 bg-primary text-white rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors"
                 whileHover={{ x: 5 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -81,7 +81,7 @@ export default function Home() {
               <img
                 src="/CINTIA LEARNING.avif"
                 alt="CINTIA Learning Platform"
-                className="rounded-lg shadow-xl"
+                className="rounded-lg shadow-xl w-full h-auto"
               />
             </motion.div>
           </div>
@@ -90,18 +90,18 @@ export default function Home() {
 
       {/* Módulos Comunes Section */}
       {currentModule > 0 && (
-        <section id="modulos" className="py-16 md:py-24 bg-white">
+        <section id="modulos" className="py-12 md:py-24 bg-white">
           <div className="container mx-auto px-4">
             <motion.div
-              className="text-center mb-12"
+              className="text-center mb-8 md:mb-12"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Módulos Comunes de Capacitación
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
                 Una estructura pedagógica sólida que proporciona los fundamentos
                 necesarios para todos los docentes, independientemente de su
                 facultad.
@@ -144,7 +144,7 @@ export default function Home() {
                   />
                   <motion.button
                     onClick={() => setCurrentModule(2)}
-                    className="mt-6 w-full px-8 py-3 bg-primary text-white rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors"
+                    className="mt-6 w-full px-6 md:px-8 py-3 bg-primary text-white rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
@@ -181,10 +181,10 @@ export default function Home() {
                     ]}
                     autoExpand={true}
                   />
-                  <div className="flex gap-4 mt-6">
+                  <div className="flex gap-3 md:gap-4 mt-6">
                     <motion.button
                       onClick={() => setCurrentModule(1)}
-                      className="flex-1 px-8 py-3 bg-gray-200 text-gray-700 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-gray-300 transition-colors"
+                      className="flex-1 px-4 md:px-8 py-3 bg-gray-200 text-gray-700 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-gray-300 transition-colors text-sm md:text-base"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
@@ -192,7 +192,7 @@ export default function Home() {
                     </motion.button>
                     <motion.button
                       onClick={() => setCurrentModule(3)}
-                      className="flex-1 px-8 py-3 bg-primary text-white rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors"
+                      className="flex-1 px-4 md:px-8 py-3 bg-primary text-white rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors text-sm md:text-base"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
@@ -233,10 +233,10 @@ export default function Home() {
                     ]}
                     autoExpand={true}
                   />
-                  <div className="flex gap-4 mt-6">
+                  <div className="flex gap-3 md:gap-4 mt-6">
                     <motion.button
                       onClick={() => setCurrentModule(2)}
-                      className="flex-1 px-8 py-3 bg-gray-200 text-gray-700 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-gray-300 transition-colors"
+                      className="flex-1 px-4 md:px-8 py-3 bg-gray-200 text-gray-700 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-gray-300 transition-colors text-sm md:text-base"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
@@ -244,7 +244,7 @@ export default function Home() {
                     </motion.button>
                     <motion.button
                       onClick={() => setCurrentModule(4)}
-                      className="flex-1 px-8 py-3 bg-primary text-white rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors"
+                      className="flex-1 px-4 md:px-8 py-3 bg-primary text-white rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors text-sm md:text-base"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
@@ -286,7 +286,7 @@ export default function Home() {
                   />
                   <motion.button
                     onClick={() => setCurrentModule(3)}
-                    className="mt-6 w-full px-8 py-3 bg-gray-200 text-gray-700 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-gray-300 transition-colors"
+                    className="mt-6 w-full px-6 md:px-8 py-3 bg-gray-200 text-gray-700 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-gray-300 transition-colors"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
@@ -300,33 +300,33 @@ export default function Home() {
       )}
 
       {/* Contenidos Detallados Section */}
-      <section id="contenidos" className="py-16 md:py-24 bg-gray-50">
+      <section id="contenidos" className="py-12 md:py-24 bg-gray-50">
         <div className="container mx-auto px-4">
           <motion.div
-            className="text-center mb-12"
+            className="text-center mb-8 md:mb-12"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Contenidos que Aprenderás
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
               Desglose completo de todos los temas, subtemas y habilidades que
               desarrollarás a través de esta ruta de aprendizaje.
             </p>
           </motion.div>
 
           <motion.div
-            className="grid md:grid-cols-2 gap-8"
+            className="grid md:grid-cols-2 gap-6 md:gap-8"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <div className="bg-white p-8 rounded-lg shadow-md">
-              <h3 className="text-2xl font-bold text-primary mb-6">
+            <div className="bg-white p-6 md:p-8 rounded-lg shadow-md">
+              <h3 className="text-xl md:text-2xl font-bold text-primary mb-4 md:mb-6">
                 Habilidades Técnicas
               </h3>
               <ul className="space-y-4">
@@ -433,19 +433,19 @@ export default function Home() {
       </section>
 
       {/* Facultades Section */}
-      <section id="facultades" className="py-16 md:py-24 bg-white">
+      <section id="facultades" className="py-12 md:py-24 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
-            className="text-center mb-12"
+            className="text-center mb-8 md:mb-12"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Especializaciones por Facultad
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
               Adaptaciones específicas de la ruta de aprendizaje para cada
               disciplina, reflejando las metodologías y recursos propios de
               cada área.
@@ -453,7 +453,7 @@ export default function Home() {
           </motion.div>
 
           <motion.div
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -573,7 +573,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-r from-primary to-accent">
+      <section className="py-12 md:py-24 bg-gradient-to-r from-primary to-accent">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -581,10 +581,10 @@ export default function Home() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 md:mb-6">
               ¿Listo para Transformar tu Enseñanza Virtual?
             </h2>
-            <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-white/90 mb-6 md:mb-8 max-w-2xl mx-auto">
               Únete a docentes de la Universidad de Córdoba que ya están
               mejorando sus prácticas educativas con CINTIA.
             </p>
@@ -592,7 +592,7 @@ export default function Home() {
               href="https://forms.gle/RLX7wKHvGQP8YrCh7"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-3 bg-white text-primary rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center gap-2"
+              className="w-full sm:w-auto px-6 md:px-8 py-3 bg-white text-primary rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center gap-2"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
             >
