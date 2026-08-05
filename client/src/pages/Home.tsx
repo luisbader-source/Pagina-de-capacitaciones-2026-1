@@ -140,6 +140,7 @@ export default function Home() {
                       "Configuración del perfil personal",
                       "Creación de un esquema básico de curso",
                     ]}
+                    autoExpand={true}
                   />
                   <motion.button
                     onClick={() => setCurrentModule(2)}
@@ -178,6 +179,7 @@ export default function Home() {
                       "Creación de una página con contenido multimedia",
                       "Diseño de un libro interactivo en CINTIA",
                     ]}
+                    autoExpand={true}
                   />
                   <div className="flex gap-4 mt-6">
                     <motion.button
@@ -229,6 +231,7 @@ export default function Home() {
                       "Diseño de una tarea con rúbrica de evaluación",
                       "Participación en la construcción de un wiki o glosario",
                     ]}
+                    autoExpand={true}
                   />
                   <div className="flex gap-4 mt-6">
                     <motion.button
@@ -279,6 +282,7 @@ export default function Home() {
                       "Calificación de una tarea con retroalimentación",
                       "Revisión de informes de actividad del curso",
                     ]}
+                    autoExpand={true}
                   />
                   <motion.button
                     onClick={() => setCurrentModule(3)}
