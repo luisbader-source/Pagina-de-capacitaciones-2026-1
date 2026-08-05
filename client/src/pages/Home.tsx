@@ -588,14 +588,17 @@ export default function Home() {
               Únete a docentes de la Universidad de Córdoba que ya están
               mejorando sus prácticas educativas con CINTIA.
             </p>
-            <motion.button
+            <motion.a
+              href="https://forms.gle/RLX7wKHvGQP8YrCh7"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-8 py-3 bg-white text-primary rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center gap-2"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
             >
-              Acceder a la Ruta de Aprendizaje
+              Inscribirse
               <ArrowRight size={20} />
-            </motion.button>
+            </motion.a>
           </motion.div>
         </div>
       </section>
