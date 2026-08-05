@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
-import { ArrowRight, BookOpen, Users, BarChart3, Zap } from "lucide-react";
+import { ArrowRight, BookOpen, Users, BarChart3, Zap, ChevronRight } from "lucide-react";
 import Header from "@/components/Header";
 import ModuleCard from "@/components/ModuleCard";
 import FacultyCard from "@/components/FacultyCard";
+import { useState } from "react";
 
 export default function Home() {
+  const [currentModule, setCurrentModule] = useState(0);
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -60,6 +62,7 @@ export default function Home() {
                 especializaciones disciplinares adaptadas a tu facultad.
               </p>
               <motion.button
+                onClick={() => setCurrentModule(1)}
                 className="px-8 py-3 bg-primary text-white rounded-lg font-semibold flex items-center gap-2 hover:bg-primary/90 transition-colors"
                 whileHover={{ x: 5 }}
                 whileTap={{ scale: 0.98 }}
@@ -86,148 +89,211 @@ export default function Home() {
       </section>
 
       {/* Módulos Comunes Section */}
-      <section id="modulos" className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Módulos Comunes de Capacitación
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Una estructura pedagógica sólida que proporciona los fundamentos
-              necesarios para todos los docentes, independientemente de su
-              facultad.
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="grid md:grid-cols-2 gap-6"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <motion.div variants={itemVariants}>
-              <ModuleCard
-                icon={<Zap />}
-                number={1}
-                title="Introducción a CINTIA"
-                objective="Familiariza a los docentes con la interfaz de CINTIA y los principios clave de la educación virtual."
-                contents={[
-                  {
-                    title: "Contenidos",
-                    items: [
-                      "Iniciar sesión y recuperación de contraseña",
-                      "Vista inicial",
-                      "Perfil de usuario",
-                      "Área personal",
-                      "Navegación por los bloques y Menús",
-                      "Cambiar la contraseña de usuario",
-                    ],
-                  },
-                ]}
-                activities={[
-                  "Exploración guiada de la plataforma",
-                  "Participación en un foro de presentación",
-                  "Configuración del perfil personal",
-                  "Creación de un esquema básico de curso",
-                ]}
-              />
+      {currentModule > 0 && (
+        <section id="modulos" className="py-16 md:py-24 bg-white">
+          <div className="container mx-auto px-4">
+            <motion.div
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Módulos Comunes de Capacitación
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Una estructura pedagógica sólida que proporciona los fundamentos
+                necesarios para todos los docentes, independientemente de su
+                facultad.
+              </p>
             </motion.div>
 
-            <motion.div variants={itemVariants}>
-              <ModuleCard
-                icon={<BookOpen />}
-                number={2}
-                title="Creación de Contenidos Digitales"
-                objective="Capacita a los docentes en la elaboración y organización de recursos didácticos digitales."
-                contents={[
-                  {
-                    title: "Contenidos",
-                    items: [
-                      "Estructura de curso",
-                      "Participantes",
-                      "Mensajería",
-                      "Edición de curso",
-                      "Edición de encabezado",
-                      "Área de texto y medios",
-                    ],
-                  },
-                ]}
-                activities={[
-                  "Subida y organización de diferentes tipos de archivos",
-                  "Creación de una página con contenido multimedia",
-                  "Diseño de un libro interactivo en CINTIA",
-                ]}
-              />
-            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="max-w-2xl mx-auto"
+            >
+              {currentModule === 1 && (
+                <div>
+                  <ModuleCard
+                    icon={<Zap />}
+                    number={1}
+                    title="Introducción a CINTIA"
+                    objective="Familiariza a los docentes con la interfaz de CINTIA y los principios clave de la educación virtual."
+                    contents={[
+                      {
+                        title: "Contenidos",
+                        items: [
+                          "Iniciar sesión y recuperación de contraseña",
+                          "Vista inicial",
+                          "Perfil de usuario",
+                          "Área personal",
+                          "Navegación por los bloques y Menús",
+                          "Cambiar la contraseña de usuario",
+                        ],
+                      },
+                    ]}
+                    activities={[
+                      "Exploración guiada de la plataforma",
+                      "Participación en un foro de presentación",
+                      "Configuración del perfil personal",
+                      "Creación de un esquema básico de curso",
+                    ]}
+                  />
+                  <motion.button
+                    onClick={() => setCurrentModule(2)}
+                    className="mt-6 w-full px-8 py-3 bg-primary text-white rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    Siguiente
+                    <ChevronRight size={20} />
+                  </motion.button>
+                </div>
+              )}
 
-            <motion.div variants={itemVariants}>
-              <ModuleCard
-                icon={<Users />}
-                number={3}
-                title="Actividades Interactivas"
-                objective="Diseña e implementa actividades que promuevan la participación activa y colaborativa."
-                contents={[
-                  {
-                    title: "Contenidos",
-                    items: [
-                      "Categorías",
-                      "Opción múltiple",
-                      "Verdadero o Falso",
-                      "Respuestas cortas",
-                      "Emparejamiento",
-                      "Arrastrar y soltar sobre texto",
-                      "Importar y Exportar",
-                      "Configuración de cuestionarios",
-                      "Agregando preguntas al cuestionario",
-                    ],
-                  },
-                ]}
-                activities={[
-                  "Creación de un foro de debate con una consigna específica",
-                  "Diseño de una tarea con rúbrica de evaluación",
-                  "Participación en la construcción de un wiki o glosario",
-                ]}
-              />
-            </motion.div>
+              {currentModule === 2 && (
+                <div>
+                  <ModuleCard
+                    icon={<BookOpen />}
+                    number={2}
+                    title="Creación de Contenidos Digitales"
+                    objective="Capacita a los docentes en la elaboración y organización de recursos didácticos digitales."
+                    contents={[
+                      {
+                        title: "Contenidos",
+                        items: [
+                          "Estructura de curso",
+                          "Participantes",
+                          "Mensajería",
+                          "Edición de curso",
+                          "Edición de encabezado",
+                          "Área de texto y medios",
+                        ],
+                      },
+                    ]}
+                    activities={[
+                      "Subida y organización de diferentes tipos de archivos",
+                      "Creación de una página con contenido multimedia",
+                      "Diseño de un libro interactivo en CINTIA",
+                    ]}
+                  />
+                  <div className="flex gap-4 mt-6">
+                    <motion.button
+                      onClick={() => setCurrentModule(1)}
+                      className="flex-1 px-8 py-3 bg-gray-200 text-gray-700 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-gray-300 transition-colors"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      Anterior
+                    </motion.button>
+                    <motion.button
+                      onClick={() => setCurrentModule(3)}
+                      className="flex-1 px-8 py-3 bg-primary text-white rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      Siguiente
+                      <ChevronRight size={20} />
+                    </motion.button>
+                  </div>
+                </div>
+              )}
 
-            <motion.div variants={itemVariants}>
-              <ModuleCard
-                icon={<BarChart3 />}
-                number={4}
-                title="Evaluación y Seguimiento"
-                objective="Proporciona herramientas para evaluar el progreso y ofrecer retroalimentación efectiva."
-                contents={[
-                  {
-                    title: "Contenidos",
-                    items: [
-                      "Libro de calificaciones",
-                      "Registros",
-                      "Actividad del curso",
-                      "Restricción por fecha",
-                      "Restricción por calificación",
-                      "Restricción por finalización de actividad",
-                      "Restricción por grupo",
-                      "Restricción por perfil de usuario",
-                    ],
-                  },
-                ]}
-                activities={[
-                  "Configuración de un libro de calificaciones básico",
-                  "Calificación de una tarea con retroalimentación",
-                  "Revisión de informes de actividad del curso",
-                ]}
-              />
+              {currentModule === 3 && (
+                <div>
+                  <ModuleCard
+                    icon={<Users />}
+                    number={3}
+                    title="Actividades Interactivas"
+                    objective="Diseña e implementa actividades que promuevan la participación activa y colaborativa."
+                    contents={[
+                      {
+                        title: "Contenidos",
+                        items: [
+                          "Categorías",
+                          "Opción múltiple",
+                          "Verdadero o Falso",
+                          "Respuestas cortas",
+                          "Emparejamiento",
+                          "Arrastrar y soltar sobre texto",
+                          "Importar y Exportar",
+                          "Configuración de cuestionarios",
+                          "Agregando preguntas al cuestionario",
+                        ],
+                      },
+                    ]}
+                    activities={[
+                      "Creación de un foro de debate con una consigna específica",
+                      "Diseño de una tarea con rúbrica de evaluación",
+                      "Participación en la construcción de un wiki o glosario",
+                    ]}
+                  />
+                  <div className="flex gap-4 mt-6">
+                    <motion.button
+                      onClick={() => setCurrentModule(2)}
+                      className="flex-1 px-8 py-3 bg-gray-200 text-gray-700 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-gray-300 transition-colors"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      Anterior
+                    </motion.button>
+                    <motion.button
+                      onClick={() => setCurrentModule(4)}
+                      className="flex-1 px-8 py-3 bg-primary text-white rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      Siguiente
+                      <ChevronRight size={20} />
+                    </motion.button>
+                  </div>
+                </div>
+              )}
+
+              {currentModule === 4 && (
+                <div>
+                  <ModuleCard
+                    icon={<BarChart3 />}
+                    number={4}
+                    title="Evaluación y Seguimiento"
+                    objective="Proporciona herramientas para evaluar el progreso y ofrecer retroalimentación efectiva."
+                    contents={[
+                      {
+                        title: "Contenidos",
+                        items: [
+                          "Libro de calificaciones",
+                          "Registros",
+                          "Actividad del curso",
+                          "Restricción por fecha",
+                          "Restricción por calificación",
+                          "Restricción por finalización de actividad",
+                          "Restricción por grupo",
+                          "Restricción por perfil de usuario",
+                        ],
+                      },
+                    ]}
+                    activities={[
+                      "Configuración de un libro de calificaciones básico",
+                      "Calificación de una tarea con retroalimentación",
+                      "Revisión de informes de actividad del curso",
+                    ]}
+                  />
+                  <motion.button
+                    onClick={() => setCurrentModule(3)}
+                    className="mt-6 w-full px-8 py-3 bg-gray-200 text-gray-700 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-gray-300 transition-colors"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    Anterior
+                  </motion.button>
+                </div>
+              )}
             </motion.div>
-          </motion.div>
-        </div>
-      </section>
+          </div>
+        </section>
+      )}
 
       {/* Contenidos Detallados Section */}
       <section id="contenidos" className="py-16 md:py-24 bg-gray-50">
