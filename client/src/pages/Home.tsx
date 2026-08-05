@@ -66,6 +66,15 @@ export default function Home() {
                 className="w-full sm:w-auto px-6 md:px-8 py-3 bg-primary text-white rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors"
                 whileHover={{ x: 5 }}
                 whileTap={{ scale: 0.98 }}
+                animate={{
+                  y: [0, -8, 0],
+                }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  ease: "easeInOut",
+                }}
               >
                 Comienza tu Ruta
                 <ArrowRight size={20} />
