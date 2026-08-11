@@ -25,7 +25,7 @@ const metrics: Metric[] = [
   {
     icon: <Award size={32} />,
     value: 98,
-    label: "Satisfacción Docente",
+    label: "Apreciación Docente",
     suffix: "%",
   },
   {
