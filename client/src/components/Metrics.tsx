@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Users, BookOpen, Award, TrendingUp } from "lucide-react";
+import { Users, GraduationCap, Award, TrendingUp } from "lucide-react";
 import { useEffect, useState } from "react";
 
 interface Metric {
@@ -12,14 +12,14 @@ interface Metric {
 const metrics: Metric[] = [
   {
     icon: <Users size={32} />,
-    value: 400,
-    label: "Profesores Capacitados",
+    value: 1000,
+    label: "Profesores Impactados",
     suffix: "+",
   },
   {
-    icon: <BookOpen size={32} />,
-    value: 150,
-    label: "Cursos Virtuales Creados",
+    icon: <GraduationCap size={32} />,
+    value: 17000,
+    label: "Estudiantes Impactados",
     suffix: "+",
   },
   {
@@ -43,12 +43,16 @@ function AnimatedCounter({ value, suffix = "" }: { value: number; suffix?: strin
     let start = 0;
     const end = value;
     const duration = 2000;
-    const incrementTime = duration / end;
+    const incrementTime = duration / (value > 1000 ? 100 : end);
+    const increment = value > 1000 ? Math.ceil(value / 100) : 1;
+    
     const timer = setInterval(() => {
-      start += 1;
-      setCount(start);
+      start += increment;
       if (start >= end) {
+        setCount(end);
         clearInterval(timer);
+      } else {
+        setCount(start);
       }
     }, incrementTime);
 
@@ -57,7 +61,7 @@ function AnimatedCounter({ value, suffix = "" }: { value: number; suffix?: strin
 
   return (
     <span className="font-bold text-gray-900">
-      {count}{suffix}
+      {count.toLocaleString()}{suffix}
     </span>
   );
 }
@@ -77,8 +81,8 @@ export default function Metrics() {
             Nuestros Logros
           </h2>
           <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Más de 400 profesores ya han transformado su enseñanza con CINTIA.
-            Únete a la comunidad de docentes innovadores de la Universidad de Córdoba.
+            Más de 1,000 profesores y 17,000 estudiantes ya han sido impactados
+            por CINTIA. Únete a la comunidad de docentes innovadores de la Universidad de Córdoba.
           </p>
         </motion.div>
 
