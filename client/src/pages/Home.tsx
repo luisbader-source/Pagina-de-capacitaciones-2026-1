@@ -64,27 +64,40 @@ export default function Home() {
                 Universidad de Córdoba. Aprende desde los fundamentos hasta
                 especializaciones disciplinares adaptadas a tu facultad.
               </p>
-              <motion.button
-                onClick={() => {
-                  setCurrentModule(1);
-                  document.getElementById('modulos')?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="w-full sm:w-auto px-6 md:px-8 py-3 bg-primary text-white rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors"
-                whileHover={{ x: 5 }}
-                whileTap={{ scale: 0.98 }}
-                animate={{
-                  y: [0, -8, 0],
-                }}
-                transition={{
-                  duration: 1.5,
-                  repeat: Infinity,
-                  repeatType: "loop",
-                  ease: "easeInOut",
-                }}
-              >
-                Comienza tu Ruta
-                <ArrowRight size={20} />
-              </motion.button>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <motion.button
+                  onClick={() => {
+                    setCurrentModule(1);
+                    document.getElementById('modulos')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="w-full sm:w-auto px-6 md:px-8 py-3 bg-primary text-white rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors"
+                  whileHover={{ x: 5 }}
+                  whileTap={{ scale: 0.98 }}
+                  animate={{
+                    y: [0, -8, 0],
+                  }}
+                  transition={{
+                    duration: 1.5,
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    ease: "easeInOut",
+                  }}
+                >
+                  Comienza tu Ruta
+                  <ArrowRight size={20} />
+                </motion.button>
+                <motion.a
+                  href="https://renata.zoom.us/meeting/register/LcRvAUTwRzO74xNOpjn4Rg#/registration"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto px-6 md:px-8 py-3 bg-white text-primary border-2 border-primary rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-gray-50 transition-colors"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Aula en Línea
+                  <span className="text-2xl">📹</span>
+                </motion.a>
+              </div>
             </motion.div>
 
             <motion.div
@@ -483,7 +496,7 @@ export default function Home() {
                 name="Facultad de Ingeniería"
                 focus="Aplicación Técnica de CINTIA"
                 color="text-orange-600"
-                date="Lunes 17 de agosto a las 9:00 a.m."
+                date="Lunes 24 de agosto a las 9:00 a.m."
                 contents={[
                   "Módulo 1: Acceso al campus virtual para proyectos",
                   "Módulo 2: Estructura de cursos de ingeniería",
