@@ -10,6 +10,7 @@ export default function Header() {
     { label: "Módulos", href: "#modulos" },
     { label: "Contenidos", href: "#contenidos" },
     { label: "Facultades", href: "#facultades" },
+    { label: "FAQ", href: "#faq" },
   ];
 
   return (

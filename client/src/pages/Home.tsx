@@ -3,6 +3,7 @@ import { ArrowRight, BookOpen, Users, BarChart3, Zap, ChevronRight } from "lucid
 import Header from "@/components/Header";
 import ModuleCard from "@/components/ModuleCard";
 import FacultyCard from "@/components/FacultyCard";
+import FAQ from "@/components/FAQ";
 import { useState } from "react";
 
 export default function Home() {
@@ -580,6 +581,9 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <FAQ />
 
       {/* CTA Section */}
       <section className="py-12 md:py-24 bg-gradient-to-r from-primary to-accent">
