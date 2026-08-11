@@ -9,24 +9,24 @@ interface FAQItem {
 
 const faqData: FAQItem[] = [
   {
-    question: "¿Cuál es la duración total del programa de capacitación?",
-    answer: "El programa completo tiene una duración de 4 semanas, con sesiones semanales de 2-3 horas. Cada módulo incluye tiempo para práctica individual y actividades de aplicación en el campus virtual."
+    question: "¿Cuál es la duración de la capacitación?",
+    answer: "La capacitación comienza con una clase introductoria de 2 horas a nivel básico. Si deseas obtener la certificación completa, debes continuar el programa en el campus virtual de CINTIA, donde completarás los módulos adicionales y actividades evaluativas a tu propio ritmo."
   },
   {
     question: "¿La capacitación es sincrónica o asincrónica?",
-    answer: "Es una modalidad mixta (blended learning). Las sesiones principales son sincrónicas a través de videoconferencias, complementadas con actividades asincrónicas que puedes realizar a tu propio ritmo en el campus virtual de CINTIA."
+    answer: "Es una modalidad mixta (blended learning). La sesión inicial de 2 horas es sincrónica a través de videoconferencia. El resto del programa para la certificación completa se realiza de forma asincrónica en el campus virtual, donde puedes avanzar a tu propio ritmo."
   },
   {
     question: "¿Cuáles son los requisitos previos para participar?",
     answer: "Necesitas tener acceso activo al campus virtual de CINTIA con tu cuenta institucional de la Universidad de Córdoba. También se recomienda tener conocimientos básicos de navegación web y disponer de un dispositivo con conexión a internet estable."
   },
   {
-    question: "¿Se otorga certificación al completar el programa?",
-    answer: "Sí, al completar satisfactoriamente todos los módulos y las actividades evaluativas, recibirás un certificado digital de la Universidad de Córdoba que acredita tu capacitación en el uso pedagógico de CINTIA."
+    question: "¿Cómo obtengo la certificación completa?",
+    answer: "Para obtener la certificación, debes completar todos los módulos del programa en el campus virtual de CINTIA, incluyendo las actividades evaluativas y cuestionarios. La sesión inicial de 2 horas te introduce a los conceptos básicos, pero la certificación requiere completar el programa completo en línea."
   },
   {
-    question: "¿Qué pasa si no puedo asistir a una sesión sincrónica?",
-    answer: "Las sesiones sincrónicas se graban y estarán disponibles en el campus virtual. Sin embargo, se recomienda la asistencia en vivo para participar en las actividades interactivas y resolver dudas en tiempo real."
+    question: "¿Qué pasa si no puedo asistir a la sesión sincrónica inicial?",
+    answer: "La sesión inicial de 2 horas se grabará y estará disponible en el campus virtual. Sin embargo, se recomienda la asistencia en vivo para participar en las actividades interactivas y resolver dudas en tiempo real con el instructor."
   },
   {
     question: "¿Necesito instalar algún software adicional?",
@@ -46,25 +46,25 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="py-12 md:py-24 bg-gray-50">
+    <section id="faq" className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-blue-50">
       <div className="container mx-auto px-4">
         <motion.div
-          className="text-center mb-8 md:mb-12"
+          className="text-center mb-12 md:mb-16"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Preguntas Frecuentes
           </h2>
-          <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Encuentra respuestas a las dudas más comunes sobre el programa de
             capacitación en CINTIA.
           </p>
         </motion.div>
 
-        <div className="max-w-3xl mx-auto space-y-4">
+        <div className="max-w-4xl mx-auto space-y-4">
           {faqData.map((faq, index) => (
             <motion.div
               key={index}
@@ -72,19 +72,19 @@ export default function FAQ() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden"
+              className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 overflow-hidden"
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full px-6 py-4 md:px-8 md:py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
+                className="w-full px-6 py-5 md:px-8 md:py-6 flex items-center justify-between text-left hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-300 group"
               >
-                <span className="font-semibold text-gray-900 text-sm md:text-base pr-4">
+                <span className="font-semibold text-gray-900 text-base md:text-lg pr-6 group-hover:text-primary transition-colors">
                   {faq.question}
                 </span>
                 <motion.div
                   animate={{ rotate: openIndex === index ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
-                  className="flex-shrink-0"
+                  className="flex-shrink-0 bg-gradient-to-br from-blue-100 to-green-100 p-2 rounded-full group-hover:from-blue-200 group-hover:to-green-200 transition-all duration-300"
                 >
                   <ChevronDown size={20} className="text-primary" />
                 </motion.div>
@@ -96,10 +96,10 @@ export default function FAQ() {
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
-                    className="border-t border-gray-200"
+                    transition={{ duration: 0.4, ease: "easeInOut" }}
+                    className="border-t border-gray-200 bg-gradient-to-br from-blue-50/50 to-green-50/50"
                   >
-                    <div className="px-6 py-4 md:px-8 md:py-5 text-gray-700 text-sm md:text-base leading-relaxed">
+                    <div className="px-6 py-5 md:px-8 md:py-6 text-gray-700 text-base md:text-lg leading-relaxed">
                       {faq.answer}
                     </div>
                   </motion.div>
