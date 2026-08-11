@@ -65,7 +65,10 @@ export default function Home() {
                 especializaciones disciplinares adaptadas a tu facultad.
               </p>
               <motion.button
-                onClick={() => setCurrentModule(1)}
+                onClick={() => {
+                  setCurrentModule(1);
+                  document.getElementById('modulos')?.scrollIntoView({ behavior: 'smooth' });
+                }}
                 className="w-full sm:w-auto px-6 md:px-8 py-3 bg-primary text-white rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors"
                 whileHover={{ x: 5 }}
                 whileTap={{ scale: 0.98 }}
