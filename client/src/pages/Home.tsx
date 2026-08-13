@@ -195,12 +195,10 @@ export default function Home() {
                       {
                         title: "Contenidos",
                         items: [
-                          "Estructura de curso",
-                          "Participantes",
-                          "Mensajería",
-                          "Edición de curso",
-                          "Edición de encabezado",
-                          "Área de texto y medios",
+                          "Organización de cortes, unidades o módulos",
+                          "Activar edición del curso",
+                          "Edición de nombres de secciones",
+                          "Uso de etiquetas, descripciones e instrucciones",
                         ],
                       },
                     ]}
