@@ -2,32 +2,37 @@ import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
 import { useState } from "react";
 
-const testimonials = [
-  "Buena clase",
-  "Buena capacitación",
-  "Muy útil la inducción",
-  "Me pareció muy útil la capacitación",
-  "Muy buena la auditoría aprendí nuevas cosas que me van a servir en mi proceso de formación",
-  "Una capacitación muy completa, explica a profundidad el uso de la plataforma Cintia",
-  "Excelente clase",
-  "Excelente capacitación",
-  "Muchas gracias por la capacitación y orientación acerca de la plataforma.",
-  "Me pareció muy buena la clase",
-  "Muy buena clase",
-  "Buena información, clara y consisa",
-  "Muchas gracias por su capacitación",
-  "Muy completa la inducción",
-  "Gracias!",
-  "Muy buena clase gracias",
-  "Excelente inducción",
-  "Las explicaciones me parecieron buenas, dentro de todo, la capacitación se sintió cómoda.",
-  "Muy educativa y didáctica",
-  "Gracias por la clase",
-  "Buena clases",
-  "Buena clase, informativa",
-  "Super buena la capacitación",
-  "Buena clase todo muy bien explicado",
-  "10 de 10",
+interface Testimonial {
+  name: string;
+  comment: string;
+}
+
+const testimonials: Testimonial[] = [
+  { name: "Juan Sebastian Vega Trespalacio", comment: "Buena clase" },
+  { name: "Andrea Carolina Martínez Hoyos", comment: "Buena capacitación" },
+  { name: "Juan Guillermo Gomez Rocha", comment: "Muy útil la inducción" },
+  { name: "María Angélica Valdez Hernández", comment: "Me pareció muy útil la capacitación" },
+  { name: "Valeria Milagro Martinez Montes", comment: "Muy buena la auditoría aprendí nuevas cosas que me van a servir en mi proceso de formación" },
+  { name: "Oscar David Causil Doria", comment: "Una capacitación muy completa, explica a profundidad el uso de la plataforma Cintia" },
+  { name: "Jaiceth Otero Navarro", comment: "Excelente clase" },
+  { name: "Adriana Lucía Espitia Tapia", comment: "Excelente capacitación" },
+  { name: "Yaznilis Santos Alvarez", comment: "Muchas gracias por la capacitación y orientación acerca de la plataforma." },
+  { name: "Luis Mario", comment: "Me pareció muy buena la clase" },
+  { name: "Marlin Lucia Cavadias Sepúlveda", comment: "Muy buena clase" },
+  { name: "Charis Daniela Castro Julio", comment: "Buena información, clara y consisa" },
+  { name: "Isabella Sofía Flórez Solano", comment: "Muchas gracias por su capacitación" },
+  { name: "Nataly Conde Estrada", comment: "Muy completa la inducción" },
+  { name: "Dylan Andrés Quevedo Naranjo", comment: "Gracias!" },
+  { name: "Joice Mariana Oviedo López", comment: "Muy buena clase gracias" },
+  { name: "Nelymar Espitia Berrocal", comment: "Excelente inducción" },
+  { name: "Maria Camila Escudero Nuñez", comment: "Las explicaciones me parecieron buenas, dentro de todo, la capacitación se sintió cómoda." },
+  { name: "Saidith Paola Aguilar Díaz", comment: "Muy educativa y didáctica" },
+  { name: "Myrleth Martínez Mejía", comment: "Gracias por la clase" },
+  { name: "Camila Andrea Pérez Benavides", comment: "Buena clases" },
+  { name: "Andres Felipe Martinez Naranjo", comment: "Buena clase, informativa" },
+  { name: "Luis Gabriel Doria Morales", comment: "Super buena la capacitación" },
+  { name: "Salomé López Ballesteros", comment: "Buena clase todo muy bien explicado" },
+  { name: "Shtepanni Sofia Jaramillo Bedoya", comment: "10 de 10" },
 ];
 
 export default function Testimonials() {
@@ -78,16 +83,16 @@ export default function Testimonials() {
               </div>
               
               <p className="text-xl md:text-2xl text-gray-800 leading-relaxed mb-8 font-medium">
-                "{testimonials[currentIndex]}"
+                "{testimonials[currentIndex].comment}"
               </p>
               
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl">
-                  {String(currentIndex + 1).padStart(2, '0')}
+                  {testimonials[currentIndex].name.charAt(0)}
                 </div>
                 <div>
                   <div className="font-semibold text-gray-900 text-base md:text-lg">
-                    Docente {currentIndex + 1}
+                    {testimonials[currentIndex].name}
                   </div>
                   <div className="text-sm md:text-base text-gray-600">
                     Universidad de Córdoba
