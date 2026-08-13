@@ -518,7 +518,7 @@ export default function Home() {
                 name="Medicina Veterinaria y Zootecnia"
                 focus="Casos Clínicos y Evaluación Veterinaria"
                 color="text-purple-600"
-                date="Martes 18 de agosto a las 9:00 a.m."
+                date="Martes 25 de agosto a las 9:00 a.m."
                 contents={[
                   "Módulo 1: Acceso al campus para casos clínicos",
                   "Módulo 2: Edición de cursos con contenido veterinario",
@@ -540,7 +540,7 @@ export default function Home() {
                 name="Facultad de Ciencias Agrícolas"
                 focus="Proyectos Agrícolas y Monitoreo"
                 color="text-lime-600"
-                date="Miércoles 19 de agosto a las 9:00 a.m."
+                date="Miércoles 26 de agosto a las 9:00 a.m."
                 contents={[
                   "Módulo 1: Acceso al campus para proyectos agrícolas",
                   "Módulo 2: Estructura de cursos con contenido agrícola",
@@ -562,7 +562,7 @@ export default function Home() {
                 name="Facultad de Ciencias Básicas"
                 focus="Experimentación y Análisis Científico"
                 color="text-cyan-600"
-                date="Jueves 20 de agosto a las 9:00 a.m."
+                date="Jueves 27 de agosto a las 9:00 a.m."
                 contents={[
                   "Módulo 1: Acceso al campus para laboratorios virtuales",
                   "Módulo 2: Edición de cursos con contenido científico",
@@ -584,7 +584,7 @@ export default function Home() {
                 name="Educación y Ciencias Humanas"
                 focus="Metodologías Pedagógicas Innovadoras"
                 color="text-red-600"
-                date="Viernes 21 de agosto a las 9:00 a.m."
+                date="Viernes 28 de agosto a las 9:00 a.m."
                 contents={[
                   "Módulo 1: Acceso al campus para portafolios digitales",
                   "Módulo 2: Edición de cursos con contenido pedagógico",
