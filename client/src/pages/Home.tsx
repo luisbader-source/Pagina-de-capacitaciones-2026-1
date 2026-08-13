@@ -242,15 +242,12 @@ export default function Home() {
                       {
                         title: "Contenidos",
                         items: [
-                          "Categorías",
-                          "Opción múltiple",
-                          "Verdadero o Falso",
-                          "Respuestas cortas",
-                          "Emparejamiento",
-                          "Arrastrar y soltar sobre texto",
-                          "Importar y Exportar",
-                          "Configuración de cuestionarios",
-                          "Agregando preguntas al cuestionario",
+                          "Diferencia entre archivo, carpeta, página, URL y libro",
+                          "Carga de documentos PDF, Word y presentaciones",
+                          "Creación de carpetas con archivos",
+                          "Inserción de videos y enlaces externos",
+                          "Creación de páginas de contenido",
+                          "Recomendaciones para evitar aulas saturadas de archivos",
                         ],
                       },
                     ]}
