@@ -156,12 +156,11 @@ export default function Home() {
                       {
                         title: "Contenidos",
                         items: [
-                          "Iniciar sesión y recuperación de contraseña",
-                          "Vista inicial",
-                          "Perfil de usuario",
+                          "Ingreso a la plataforma",
+                          "Recuperación de contraseña",
+                          "Reconocimiento del tablero",
+                          "Perfil del usuario",
                           "Área personal",
-                          "Navegación por los bloques y Menús",
-                          "Cambiar la contraseña de usuario",
                         ],
                       },
                     ]}
