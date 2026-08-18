@@ -640,7 +640,7 @@ export default function Home() {
               <img
                 src="/codigo-qr.png"
                 alt="Código QR para registro"
-                className="w-40 h-40 md:w-48 md:h-48 rounded-lg shadow-lg bg-white p-2"
+                className="w-56 h-56 md:w-64 md:h-64 rounded-lg shadow-lg bg-white p-2"
               />
             </div>
           </motion.div>
