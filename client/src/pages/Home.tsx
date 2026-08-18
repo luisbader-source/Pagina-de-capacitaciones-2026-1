@@ -493,7 +493,7 @@ export default function Home() {
                 name="Facultad de Ingeniería"
                 focus="Aplicación Técnica de CINTIA"
                 color="text-orange-600"
-                date="Lunes 24 de agosto a las 9:00 a.m."
+                date="Lunes 31 de agosto de 2026 a las 9:00 a.m."
                 contents={[
                   "Módulo 1: Acceso al campus virtual para proyectos",
                   "Módulo 2: Estructura de cursos de ingeniería",
@@ -515,7 +515,7 @@ export default function Home() {
                 name="Medicina Veterinaria y Zootecnia"
                 focus="Casos Clínicos y Evaluación Veterinaria"
                 color="text-purple-600"
-                date="Martes 25 de agosto a las 9:00 a.m."
+                date="Martes 1 de septiembre de 2026 a las 9:00 a.m."
                 contents={[
                   "Módulo 1: Acceso al campus para casos clínicos",
                   "Módulo 2: Edición de cursos con contenido veterinario",
@@ -537,7 +537,7 @@ export default function Home() {
                 name="Facultad de Ciencias Agrícolas"
                 focus="Proyectos Agrícolas y Monitoreo"
                 color="text-lime-600"
-                date="Miércoles 26 de agosto a las 9:00 a.m."
+                date="Miércoles 2 de septiembre de 2026 a las 9:00 a.m."
                 contents={[
                   "Módulo 1: Acceso al campus para proyectos agrícolas",
                   "Módulo 2: Estructura de cursos con contenido agrícola",
@@ -559,7 +559,7 @@ export default function Home() {
                 name="Facultad de Ciencias Básicas"
                 focus="Experimentación y Análisis Científico"
                 color="text-cyan-600"
-                date="Jueves 27 de agosto a las 9:00 a.m."
+                date="Jueves 3 de septiembre de 2026 a las 9:00 a.m."
                 contents={[
                   "Módulo 1: Acceso al campus para laboratorios virtuales",
                   "Módulo 2: Edición de cursos con contenido científico",
@@ -581,7 +581,7 @@ export default function Home() {
                 name="Educación y Ciencias Humanas"
                 focus="Metodologías Pedagógicas Innovadoras"
                 color="text-red-600"
-                date="Viernes 28 de agosto a las 9:00 a.m."
+                date="Viernes 4 de septiembre de 2026 a las 9:00 a.m."
                 contents={[
                   "Módulo 1: Acceso al campus para portafolios digitales",
                   "Módulo 2: Edición de cursos con contenido pedagógico",
