@@ -638,7 +638,7 @@ export default function Home() {
             </div>
             <div className="flex-shrink-0">
               <img
-                src="/codigo-qr (5).png"
+                src="/codigo-qr.png"
                 alt="Código QR para registro"
                 className="w-40 h-40 md:w-48 md:h-48 rounded-lg shadow-lg bg-white p-2"
               />
