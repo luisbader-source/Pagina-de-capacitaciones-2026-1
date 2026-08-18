@@ -614,25 +614,35 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
+            className="flex flex-col md:flex-row items-center justify-center gap-8"
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 md:mb-6">
-              ¿Listo para Transformar tu Enseñanza Virtual?
-            </h2>
-            <p className="text-base md:text-lg text-white/90 mb-6 md:mb-8 max-w-2xl mx-auto">
-              Únete a docentes de la Universidad de Córdoba que ya están
-              mejorando sus prácticas educativas con CINTIA.
-            </p>
-            <motion.a
-              href="https://forms.gle/RLX7wKHvGQP8YrCh7"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto px-6 md:px-8 py-3 bg-white text-primary rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center gap-2"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              Inscribirse
-              <ArrowRight size={20} />
-            </motion.a>
+            <div className="flex-1 max-w-2xl">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 md:mb-6">
+                ¿Listo para Transformar tu Enseñanza Virtual?
+              </h2>
+              <p className="text-base md:text-lg text-white/90 mb-6 md:mb-8 max-w-2xl mx-auto">
+                Únete a docentes de la Universidad de Córdoba que ya están
+                mejorando sus prácticas educativas con CINTIA.
+              </p>
+              <motion.a
+                href="https://forms.gle/RLX7wKHvGQP8YrCh7"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto px-6 md:px-8 py-3 bg-white text-primary rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center gap-2"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Inscribirse
+                <ArrowRight size={20} />
+              </motion.a>
+            </div>
+            <div className="flex-shrink-0">
+              <img
+                src="/codigo-qr (5).png"
+                alt="Código QR para registro"
+                className="w-40 h-40 md:w-48 md:h-48 rounded-lg shadow-lg bg-white p-2"
+              />
+            </div>
           </motion.div>
         </div>
       </section>
